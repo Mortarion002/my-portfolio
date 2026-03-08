@@ -6,7 +6,19 @@ module.exports = {
     './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        background: '#09090b',
+        primary: {
+          cyan: '#22d3ee',
+          violet: '#a78bfa'
+        }
+      },
+      fontFamily: {
+        sans: ['var(--font-jakarta)', 'sans-serif'],
+        mono: ['var(--font-fira-code)', 'monospace'],
+      }
+    },
   },
   plugins: [
     require('@tailwindcss/aspect-ratio'),

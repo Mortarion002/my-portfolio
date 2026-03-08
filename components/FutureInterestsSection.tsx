@@ -131,15 +131,15 @@ export default function FutureInterestsSection() {
   const byId = (id: string) => NODES.find((n) => n.id === id)!;
 
   return (
-    <section id="interests" className="py-20 bg-white">
-      <div className="container mx-auto px-6">
-        <h2 className="text-3xl font-semibold text-gray-900">Future Interests</h2>
-        <p className="mt-3 text-gray-600 max-w-2xl">
+    <section id="interests" className="py-20 bg-zinc-950 relative">
+      <div className="container mx-auto px-6 relative z-10">
+        <h2 className="text-3xl font-semibold text-gradient w-fit">Future Interests</h2>
+        <p className="mt-3 text-zinc-400 max-w-2xl">
           Emerging technologies I&apos;m exploring and planning to work with.
         </p>
 
         {/* ---------- DESKTOP NETWORK (md+) ---------- */}
-        <div className="hidden md:block mt-12 relative rounded-lg border border-gray-100 bg-white/60 p-10 shadow-sm">
+        <div className="hidden md:block mt-12 relative rounded-xl glass-card p-10">
           {/* SVG layer using 0..100 coordinate space for responsiveness */}
           <svg
             viewBox="0 0 100 100"
@@ -226,11 +226,11 @@ export default function FutureInterestsSection() {
                 >
                   <motion.div
                     animate={{
-                      boxShadow: isHovered || isActive ? "0 14px 36px rgba(99,102,241,0.12)" : "0 6px 18px rgba(15,23,42,0.06)",
+                      boxShadow: isHovered || isActive ? "0 14px 36px rgba(167,139,250,0.15)" : "0 6px 18px rgba(0,0,0,0.3)",
                       scale: isHovered || isActive ? 1.06 : 1,
                     }}
                     transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                    className="w-28 h-28 rounded-full bg-white border-2 border-transparent flex items-center justify-center relative overflow-hidden"
+                    className="w-28 h-28 rounded-full bg-zinc-900 border-2 border-transparent flex items-center justify-center relative overflow-hidden"
                     style={{
                       borderImageSource: "linear-gradient(135deg,#a78bfa,#60a5fa)",
                       borderImageSlice: 1,
@@ -242,7 +242,7 @@ export default function FutureInterestsSection() {
                     />
 
                     <div className="relative z-10 flex flex-col items-center justify-center">
-                      <Icon className="w-7 h-7 text-black" />
+                      <Icon className="w-7 h-7 text-zinc-300" />
                       <div className="sr-only">{node.name}</div>
                     </div>
 
@@ -251,7 +251,7 @@ export default function FutureInterestsSection() {
                     />
                   </motion.div>
 
-                  <div className="mt-3 text-sm font-medium text-gray-700 node-label">
+                  <div className="mt-3 text-sm font-medium text-zinc-300 node-label">
                     {node.name}
                   </div>
                 </motion.button>
@@ -268,14 +268,14 @@ export default function FutureInterestsSection() {
               <button
                 key={node.id}
                 onClick={() => setActive(node)}
-                className="w-full flex items-center gap-4 p-4 rounded-lg border bg-white shadow-sm hover:shadow-md transition"
+                className="w-full flex items-center gap-4 p-4 rounded-xl glass-card hover:bg-white/10 transition"
               >
-                <div className="flex items-center justify-center w-12 h-12 rounded-full bg-white border-2 mobile-icon">
-                  <Icon className="w-6 h-6 text-black" />
+                <div className="flex items-center justify-center w-12 h-12 rounded-full bg-zinc-900 border-2 border-white/10 mobile-icon">
+                  <Icon className="w-6 h-6 text-zinc-300" />
                 </div>
                 <div className="text-left">
-                  <div className="font-medium text-gray-800">{node.name}</div>
-                  <div className="text-sm text-gray-500">{node.details[0]}</div>
+                  <div className="font-medium text-zinc-100">{node.name}</div>
+                  <div className="text-sm text-zinc-400">{node.details[0]}</div>
                 </div>
               </button>
             );
@@ -313,42 +313,42 @@ export default function FutureInterestsSection() {
                   leaveTo="translate-x-full"
                 >
                   <Dialog.Panel className="pointer-events-auto relative w-screen max-w-md">
-                    <div className="flex h-full flex-col bg-white shadow-xl">
+                    <div className="flex h-full flex-col bg-zinc-950 shadow-xl border-l border-white/10">
                       {/* Header */}
-                      <div className="flex items-start justify-between gap-4 p-6 border-b border-gray-200">
+                      <div className="flex items-start justify-between gap-4 p-6 border-b border-white/10">
                         <div className="flex-1">
-                          <Dialog.Title className="text-xl font-semibold text-gray-900">
+                          <Dialog.Title className="text-xl font-semibold text-zinc-100">
                             {active?.name}
                           </Dialog.Title>
-                          <p className="mt-2 text-sm text-gray-600">Deep dive into emerging technologies and their transformative potential.</p>
+                          <p className="mt-2 text-sm text-zinc-400">Deep dive into emerging technologies and their transformative potential.</p>
                         </div>
 
                         <button
                           onClick={() => setActive(null)}
-                          className="flex-shrink-0 p-2 rounded hover:bg-gray-100 transition-colors"
+                          className="flex-shrink-0 p-2 rounded text-zinc-400 hover:bg-white/10 transition-colors"
                           aria-label="Close dialog"
                         >
-                          <X className="w-5 h-5 text-gray-600" />
+                          <X className="w-5 h-5 text-zinc-400" />
                         </button>
                       </div>
 
                       {/* Scrollable content */}
                       <div className="flex-1 overflow-y-auto p-6">
                         <div className="space-y-4">
-                          <h3 className="font-medium text-gray-900">Why This Technology Matters</h3>
-                          <ul className="space-y-4 text-gray-700">
+                          <h3 className="font-medium text-zinc-100">Why This Technology Matters</h3>
+                          <ul className="space-y-4 text-zinc-300">
                             {active?.details.map((detail, idx) => (
                               <li key={idx} className="flex items-start gap-3">
-                                <span className="flex-shrink-0 w-2 h-2 bg-indigo-400 rounded-full mt-2"></span>
+                                <span className="flex-shrink-0 w-2 h-2 bg-gradient-to-r from-cyan-400 to-violet-400 rounded-full mt-2"></span>
                                 <span className="text-sm leading-relaxed">{detail}</span>
                               </li>
                             ))}
                           </ul>
                         </div>
 
-                        <div className="mt-8 pt-6 border-t border-gray-100">
-                          <h3 className="font-medium text-gray-900 mb-4">Learning Approach & Goals</h3>
-                          <ul className="space-y-3 text-sm text-gray-600">
+                        <div className="mt-8 pt-6 border-t border-white/10">
+                          <h3 className="font-medium text-zinc-100 mb-4">Learning Approach & Goals</h3>
+                          <ul className="space-y-3 text-sm text-zinc-400">
                             <li className="flex items-start gap-3">
                               <span className="flex-shrink-0 w-2 h-2 bg-green-400 rounded-full mt-2"></span>
                               <span>Build comprehensive understanding through theoretical study combined with practical implementation</span>

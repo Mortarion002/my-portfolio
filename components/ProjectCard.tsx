@@ -33,7 +33,7 @@ export default function ProjectCard({
     <motion.div
       whileHover={{ scale: 1.03 }}
       transition={{ type: "spring", stiffness: 300 }}
-      className={`relative h-full flex flex-col overflow-hidden rounded-lg border bg-white shadow-sm hover:shadow-xl transition ${comingSoon ? "opacity-90" : ""
+      className={`relative h-full flex flex-col overflow-hidden rounded-xl glass-card transition-shadow duration-300 ${comingSoon ? "opacity-90" : "hover:shadow-[0_0_15px_rgba(167,139,250,0.3)]"
         }`}
     >
       {comingSoon && (
@@ -45,12 +45,12 @@ export default function ProjectCard({
       )}
 
       {/* ---- image wrapper ---- */}
-      <div className="relative w-full overflow-hidden bg-gray-50 group" style={{ minHeight: 192 }}>
+      <div className="relative w-full overflow-hidden bg-zinc-900 group" style={{ minHeight: 192 }}>
         {image ? (
           <>
             {isLoading && (
               <div className="absolute inset-0 z-10">
-                <div className="h-full w-full animate-pulse bg-gradient-to-r from-gray-200 via-gray-300 to-gray-200" />
+                <div className="h-full w-full animate-pulse bg-gradient-to-r from-zinc-800 via-zinc-700 to-zinc-800" />
               </div>
             )}
             <div
@@ -76,14 +76,14 @@ export default function ProjectCard({
 
       <div className="flex flex-col flex-1 p-5 justify-between">
         <div>
-          <h3 className="text-lg font-semibold">{title}</h3>
-          <p className="mt-2 text-sm text-gray-600">{description}</p>
+          <h3 className="text-lg font-semibold text-zinc-100">{title}</h3>
+          <p className="mt-2 text-sm text-zinc-400">{description}</p>
 
           <div className="mt-4 flex flex-wrap gap-2">
             {tech.map((t) => (
               <span
                 key={t}
-                className="shimmer-hover relative z-10 text-xs px-2 py-1 bg-gray-100 rounded"
+                className="shimmer-hover relative z-10 font-mono text-xs px-2.5 py-1 bg-black/50 border border-cyan-500/30 rounded-full text-zinc-300"
               >
                 {t}
               </span>
@@ -98,7 +98,7 @@ export default function ProjectCard({
                 href={demo}
                 target="_blank"
                 rel="noreferrer"
-                className="text-sm px-3 py-1 rounded bg-indigo-600 text-white hover:bg-indigo-700 transition shimmer-hover"
+                className="text-sm px-4 py-1.5 rounded-full bg-gradient-to-r from-cyan-400 to-violet-400 text-zinc-950 font-semibold hover:scale-105 transition-transform duration-300 shimmer-hover"
               >
                 Live Demo
               </a>
@@ -108,7 +108,7 @@ export default function ProjectCard({
                 href={source}
                 target="_blank"
                 rel="noreferrer"
-                className="absolute bottom-4 right-4 p-2 rounded-full border bg-white text-gray-700 shadow-sm hover:bg-gray-100 transition flex items-center justify-center"
+                className="absolute bottom-4 right-4 p-2 rounded-full border border-white/10 bg-white/5 text-zinc-300 shadow-sm hover:bg-white/10 transition-colors flex items-center justify-center"
                 aria-label="GitHub Source Code"
               >
                 <FaGithub size={20} />
