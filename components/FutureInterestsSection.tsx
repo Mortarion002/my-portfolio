@@ -144,8 +144,7 @@ export default function FutureInterestsSection() {
           <svg
             viewBox="0 0 100 100"
             preserveAspectRatio="none"
-            className="absolute inset-6 w-[calc(100%-3rem)] h-[420px] md:h-[360px] lg:h-[320px] pointer-events-none"
-            style={{ left: "1.5rem", right: "1.5rem" }}
+            className="absolute inset-6 w-[calc(100%-3rem)] h-[420px] md:h-[360px] lg:h-[320px] pointer-events-none connector-svg"
             aria-hidden
           >
             <defs>
@@ -239,8 +238,7 @@ export default function FutureInterestsSection() {
                     }}
                   >
                     <span
-                      className="absolute inset-0 rounded-full pointer-events-none"
-                      style={{ boxShadow: "inset 0 0 0 2px rgba(167,139,250,0.10)", borderRadius: "9999px" }}
+                      className="absolute inset-0 rounded-full pointer-events-none node-shadow"
                     />
 
                     <div className="relative z-10 flex flex-col items-center justify-center">
@@ -249,14 +247,11 @@ export default function FutureInterestsSection() {
                     </div>
 
                     <span
-                      className="absolute inset-0 rounded-full pointer-events-none"
-                      style={{
-                        background: isHovered || isActive ? "radial-gradient(40% 40% at 50% 20%, rgba(96,165,250,0.08), transparent 30%)" : "transparent",
-                      }}
+                      className={`absolute inset-0 rounded-full pointer-events-none ${isHovered || isActive ? "node-bg" : ""}`}
                     />
                   </motion.div>
 
-                  <div className="mt-3 text-sm font-medium text-gray-700" style={{ width: 140, textAlign: "center" }}>
+                  <div className="mt-3 text-sm font-medium text-gray-700 node-label">
                     {node.name}
                   </div>
                 </motion.button>
@@ -275,7 +270,7 @@ export default function FutureInterestsSection() {
                 onClick={() => setActive(node)}
                 className="w-full flex items-center gap-4 p-4 rounded-lg border bg-white shadow-sm hover:shadow-md transition"
               >
-                <div className="flex items-center justify-center w-12 h-12 rounded-full bg-white border-2" style={{ borderImageSource: "linear-gradient(135deg,#a78bfa,#60a5fa)", borderImageSlice: 1 }}>
+                <div className="flex items-center justify-center w-12 h-12 rounded-full bg-white border-2 mobile-icon">
                   <Icon className="w-6 h-6 text-black" />
                 </div>
                 <div className="text-left">
@@ -328,9 +323,10 @@ export default function FutureInterestsSection() {
                           <p className="mt-2 text-sm text-gray-600">Deep dive into emerging technologies and their transformative potential.</p>
                         </div>
 
-                        <button 
-                          onClick={() => setActive(null)} 
+                        <button
+                          onClick={() => setActive(null)}
                           className="flex-shrink-0 p-2 rounded hover:bg-gray-100 transition-colors"
+                          aria-label="Close dialog"
                         >
                           <X className="w-5 h-5 text-gray-600" />
                         </button>
@@ -421,6 +417,30 @@ export default function FutureInterestsSection() {
         /* respect reduced motion */
         @media (prefers-reduced-motion: reduce) {
           .connector-path { animation: none !important; transition: none !important; }
+        }
+
+        .connector-svg {
+          left: 1.5rem;
+          right: 1.5rem;
+        }
+
+        .node-shadow {
+          box-shadow: inset 0 0 0 2px rgba(167,139,250,0.10);
+          border-radius: 9999px;
+        }
+
+        .node-bg {
+          background: radial-gradient(40% 40% at 50% 20%, rgba(96,165,250,0.08), transparent 30%);
+        }
+
+        .node-label {
+          width: 140px;
+          text-align: center;
+        }
+
+        .mobile-icon {
+          border-image-source: linear-gradient(135deg,#a78bfa,#60a5fa);
+          border-image-slice: 1;
         }
       `}</style>
     </section>

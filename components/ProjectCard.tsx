@@ -1,4 +1,4 @@
-﻿// components/ProjectCard.tsx
+// components/ProjectCard.tsx
 "use client";
 
 import { motion } from "framer-motion";
@@ -14,7 +14,7 @@ type Props = {
   tech?: string[];
   demo?: string;
   source?: string;
-  image: string;
+  image?: string;
   comingSoon?: boolean;
 };
 
@@ -44,30 +44,34 @@ export default function ProjectCard({
         </div>
       )}
 
-      {/* ---- FIXED image wrapper: explicit heights (responsive) ---- */}
+      {/* ---- image wrapper ---- */}
       <div className="relative w-full overflow-hidden bg-gray-50 group" style={{ minHeight: 192 }}>
-        {/* If you prefer Tailwind classes: use "h-48 md:h-56 lg:h-48" instead of inline style */}
-        {isLoading && (
-          <div className="absolute inset-0 z-10">
-            <div className="h-full w-full animate-pulse bg-gradient-to-r from-gray-200 via-gray-300 to-gray-200" />
+        {image ? (
+          <>
+            {isLoading && (
+              <div className="absolute inset-0 z-10">
+                <div className="h-full w-full animate-pulse bg-gradient-to-r from-gray-200 via-gray-300 to-gray-200" />
+              </div>
+            )}
+            <div
+              className={`absolute inset-0 transition-transform duration-500 ${isLoading ? "" : "group-hover:scale-105"}`}
+            >
+              <Image
+                src={image}
+                alt={title}
+                fill
+                sizes="(max-width: 768px) 100vw, 33vw"
+                className={`object-cover object-center transition-opacity duration-500 z-0 ${isLoading ? "opacity-0" : "opacity-100"} ${comingSoon ? "brightness-90" : ""}`}
+                onLoad={() => setIsLoading(false)}
+                unoptimized
+              />
+            </div>
+          </>
+        ) : (
+          <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-gray-100 to-gray-200">
+            <span className="text-4xl text-gray-300 select-none">{"</>"}</span>
           </div>
         )}
-
-        <div
-          className={`absolute inset-0 transition-transform duration-500 ${isLoading ? "" : "group-hover:scale-105"
-            }`}
-        >
-          <Image
-            src={image}
-            alt={title}
-            fill
-            sizes="(max-width: 768px) 100vw, 33vw"
-            className={`object-cover object-center transition-opacity duration-500 z-0 ${isLoading ? "opacity-0" : "opacity-100"
-              } ${comingSoon ? "brightness-90" : ""}`}
-            onLoad={() => setIsLoading(false)}
-            unoptimized
-          />
-        </div>
       </div>
 
       <div className="flex flex-col flex-1 p-5 justify-between">

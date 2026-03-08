@@ -21,7 +21,7 @@ export default function ContactSection() {
         {/* Social Icons */}
         <div className="mt-6 flex justify-center gap-6 text-2xl text-gray-600">
           <a
-            href="https://github.com/EternalKnight002"
+            href="https://github.com/Mortarion002002"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-indigo-600 transition shimmer-hover"
@@ -29,7 +29,7 @@ export default function ContactSection() {
             <FaGithub />
           </a>
           <a
-            href="https://x.com/Eternalknigh"
+            href="https://x.com/CloudKnight002"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-indigo-600 transition shimmer-hover"
