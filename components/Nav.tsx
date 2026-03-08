@@ -22,15 +22,14 @@ export default function Nav() {
   const [open, setOpen] = useState(false)
 
   const linkClass = (id: string) =>
-    `text-sm font-medium px-3 py-1 rounded ${
-      active === id ? 'text-indigo-600' : 'text-gray-600 hover:text-gray-900'
+    `text-sm font-medium px-3 py-1 rounded transition-colors ${active === id ? 'text-cyan-400' : 'text-zinc-400 hover:text-zinc-100'
     }`
 
   return (
     <>
-      <header className="border-b bg-white/90 backdrop-blur-sm fixed inset-x-0 top-0 z-50">
+      <header className="border-b border-white/10 bg-zinc-950/80 backdrop-blur-md fixed inset-x-0 top-0 z-50">
         <div className="container mx-auto px-6 py-3 flex items-center justify-between">
-          <Link href="/" className="text-lg font-bold">
+          <Link href="/" className="text-lg font-bold text-zinc-100">
             Aman Kumar
           </Link>
 
@@ -48,7 +47,7 @@ export default function Nav() {
             >
               Resume
             </a> */}
-             <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="ml-4 inline-block px-3 py-1 rounded border text-sm text-gray-700 hover:bg-gray-50"
+            <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="ml-4 inline-block px-3 py-1 rounded border border-white/10 text-sm text-zinc-300 hover:bg-white/5 transition-colors"
             >Resume</a>
 
 
@@ -60,7 +59,7 @@ export default function Nav() {
           <div className="md:hidden">
             <button
               aria-label="Open menu"
-              className="p-2 rounded text-gray-600 hover:bg-gray-100"
+              className="p-2 rounded text-zinc-400 hover:bg-white/10 transition-colors"
               onClick={() => setOpen(true)}
             >
               <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor">
@@ -96,13 +95,13 @@ export default function Nav() {
               leaveFrom="translate-x-0"
               leaveTo="-translate-x-full"
             >
-              <Dialog.Panel className="relative w-72 max-w-full bg-white shadow-xl p-6">
+              <Dialog.Panel className="relative w-72 max-w-full bg-zinc-950 shadow-xl p-6 border-r border-white/10">
                 <div className="flex items-center justify-between">
-                  <div className="text-lg font-bold">Menu</div>
+                  <div className="text-lg font-bold text-zinc-100">Menu</div>
                   <button
                     aria-label="Close menu"
                     onClick={() => setOpen(false)}
-                    className="p-2 rounded hover:bg-gray-100"
+                    className="p-2 rounded text-zinc-400 hover:bg-white/10 transition-colors"
                   >
                     ✕
                   </button>
@@ -114,7 +113,7 @@ export default function Nav() {
                       key={item.id}
                       href={`/#${item.id}`}
                       onClick={() => setOpen(false)}
-                      className={`text-base ${active === item.id ? 'text-indigo-600 font-semibold' : 'text-gray-700'}`}
+                      className={`text-base transition-colors ${active === item.id ? 'text-cyan-400 font-semibold' : 'text-zinc-400 hover:text-zinc-100'}`}
                     >
                       {item.label}
                     </a>
@@ -123,7 +122,7 @@ export default function Nav() {
                   <a
                     href="/resume.pdf"
                     download
-                    className="mt-4 inline-block px-3 py-2 rounded border text-sm text-gray-700 hover:bg-gray-50"
+                    className="mt-4 inline-block px-3 py-2 rounded border border-white/10 text-sm text-zinc-300 hover:bg-white/5 transition-colors text-center"
                     onClick={() => setOpen(false)}
                   >
                     Resume
