@@ -12,8 +12,6 @@ Welcome to the source code of my personal portfolio!
 This site showcases my skills, selected projects, and future interests in tech.  
 Built with **Next.js 15**, **React**, **Tailwind CSS**, and deployed on **Vercel**.
 
-🔗 **Live Demo:** [my-portfolio](https://my-portfolio-iota-taupe-96.vercel.app/)
-
 ---
 
 ## ✨ Features
@@ -106,8 +104,8 @@ This project is deployed with **Vercel**.
 **Aman Kumar**
 
 * 💼 [LinkedIn](https://www.linkedin.com/in/aman-kumar-537a73296/)
-* 💼 [x](https://x.com/Eternalknigh)
-* 💻 [GitHub](https://github.com/EternalKnight002)
+* 💼 [x](https://x.com/CloudKnight002)
+* 💻 [GitHub](https://github.com/Mortarion002)
 * ✉️ [Email](mailto:resoamankumar@gmail.com)
 
 ---
