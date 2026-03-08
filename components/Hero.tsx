@@ -11,7 +11,7 @@ export default function Hero() {
         </motion.h1>
 
         <motion.p initial={{ y: 6, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.12 }} className="mt-6 text-lg text-gray-600 max-w-2xl">
-          I&aposm an AI Engineer focused on designing intelligent, agentic workflows and advanced RAG systems that solve real-world problems. I love taking AI models out of the notebook and into production by crafting the complete experience—from intuitive user interfaces down to the resilient, containerized cloud infrastructure and high-performance microservices that power them behind the scenes.
+          I&apos;m an AI Engineer focused on designing intelligent, agentic workflows and advanced RAG systems that solve real-world problems. I love taking AI models out of the notebook and into production by crafting the complete experience—from intuitive user interfaces down to the resilient, containerized cloud infrastructure and high-performance microservices that power them behind the scenes.
         </motion.p>
 
         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.28 }} className="mt-8 flex gap-3">
