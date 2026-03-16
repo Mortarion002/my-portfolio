@@ -21,7 +21,7 @@ export default function ContactSection() {
         {/* Social Icons */}
         <div className="mt-6 flex justify-center gap-6 text-2xl text-zinc-400">
           <a
-            href="https://github.com/Mortarion002002"
+            href="https://github.com/Mortarion002"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-cyan-400 transition shimmer-hover"
