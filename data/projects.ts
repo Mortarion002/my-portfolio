@@ -19,7 +19,7 @@ export const projects: Project[] = [
     description:
       "A self-correcting RAG system built with LangGraph, Langsmith and FastAPI that employs a \"retrieve-grade-generate\" workflow to ensure high-accuracy answers.",
     tech: ["LangGraph", "LangSmith", "FastAPI", "Python", "RAG"],
-    image: "/projects/prodRag.png",
+    image: "/projects/Langgraph-rag.mp4",
     // demo: "https://student-productivity-app-landing-pa.vercel.app/",
     source: "https://github.com/Mortarion002/Production-rag",
   },
@@ -29,7 +29,7 @@ export const projects: Project[] = [
     description:
       "A full-stack distributed gig economy platform that connects customers with nearby providers in real-time using Redis geo-spatial routing, WebSockets, and an interactive OpenStreetMap.",
     tech: ["Next.js", "React Native", "Node.js", "PostgreSQL", "Prisma", "Redis", "WebSockets"],
-    image: "/projects/gig.png",
+    image: "/projects/gigmarket.mp4",
     source: "https://github.com/Mortarion002/Gig-Marketplace",
   },
   {
@@ -38,7 +38,7 @@ export const projects: Project[] = [
     description:
       "Advanced AI workflow and smart agent orchestrations built via Vercel AI-SDK @v5.",
     tech: ["Vercel AI SDK", "TypeScript", "Next.js", "LLMs"],
-    image: "/projects/agentic.png",
+    image: "/projects/multimodalai.mp4",
     // demo: "https://extension-marketplace-pink.vercel.app/",
     source: "https://github.com/Mortarion002/Agentic-AI",
   },
@@ -48,7 +48,7 @@ export const projects: Project[] = [
     description:
       "RAG Chatbot that stores data in a vector database allowing users to interactively query and analyze custom documents.",
     tech: ["RAG", "Vector Database", "Next.js", "Vercel"],
-    image: "/projects/verrag.png",
+    image: "/projects/rag-vercel.mp4",
     source: "https://github.com/Mortarion002/Rag-Vercel",
   },
   {
@@ -57,7 +57,7 @@ export const projects: Project[] = [
     description:
       "A proof of concept agentic workflow to automate subscription cancellation seamlessly using Agent-to-Agent (A2A) protocols.",
     tech: ["Agentic AI", "A2A Protocol", "Python"],
-    image: "/projects/subpoc.png",
+    image: "/projects/a2apoc.mp4",
     // demo: "https://music-sync-web.vercel.app/",
     source: "https://github.com/Mortarion002/Subscription_A2A",
   },
@@ -67,7 +67,7 @@ export const projects: Project[] = [
     description:
       "A Windows specific app that synchronizes the playback of music across all the Windows devices it is running on.",
     tech: ["Windows", "Electron", "WebSockets"],
-    image: "/projects/music-sync.png",
+    image: "/projects/musicsync.mp4",
     source: "https://github.com/Mortarion002/music-sync",
   },
 ];

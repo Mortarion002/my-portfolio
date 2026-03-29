@@ -44,7 +44,7 @@ export default function ProjectCard({
         </div>
       )}
 
-      {/* ---- image wrapper ---- */}
+      {/* ---- image / video wrapper ---- */}
       <div className="relative w-full overflow-hidden bg-zinc-900 group" style={{ minHeight: 192 }}>
         {image ? (
           <>
@@ -56,15 +56,27 @@ export default function ProjectCard({
             <div
               className={`absolute inset-0 transition-transform duration-500 ${isLoading ? "" : "group-hover:scale-105"}`}
             >
-              <Image
-                src={image}
-                alt={title}
-                fill
-                sizes="(max-width: 768px) 100vw, 33vw"
-                className={`object-cover object-center transition-opacity duration-500 z-0 ${isLoading ? "opacity-0" : "opacity-100"} ${comingSoon ? "brightness-90" : ""}`}
-                onLoad={() => setIsLoading(false)}
-                unoptimized
-              />
+              {image.endsWith('.mp4') || image.endsWith('.webm') ? (
+                <video
+                  src={image}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className={`object-cover object-center w-full h-full transition-opacity duration-500 z-0 ${isLoading ? "opacity-0" : "opacity-100"} ${comingSoon ? "brightness-90" : ""}`}
+                  onLoadedData={() => setIsLoading(false)}
+                />
+              ) : (
+                <Image
+                  src={image}
+                  alt={title}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                  className={`object-cover object-center transition-opacity duration-500 z-0 ${isLoading ? "opacity-0" : "opacity-100"} ${comingSoon ? "brightness-90" : ""}`}
+                  onLoad={() => setIsLoading(false)}
+                  unoptimized
+                />
+              )}
             </div>
           </>
         ) : (
